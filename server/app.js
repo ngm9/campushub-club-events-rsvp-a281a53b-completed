@@ -11,7 +11,7 @@ app.get('/api/events', (req, res) => {
 });
 
 app.post('/api/events/:id/rsvp', (req, res) => {
-  const id = req.params.id;
+  const id = Number(req.params.id);
   const event = events.find((e) => e.id === id);
 
   if (!event) {
